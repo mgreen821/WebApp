@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign Up</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="footer()">
+    <div class="main-container">
+        <header>
+            <h1 id="logo">Coworker Web App</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Sign Up</a></li>
+                    <li><a href="property.html">Add Property</a></li>
+                    <li><a href="workspace.html">Add Workspaces</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="search.html">Search</a></li>
+                </ul>
+            </nav>
+        </header>
+        <form id="userForm" class="submission-form">
+            <h2>Sign Up</h2>
+            <label for="firstName">
+                First Name
+            </label>
+            <input type="text" class="information" id="firstName" name="firstName" placeholder="Enter First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter First Name'">
+
+            <label for="lastName">
+                Last Name
+            </label>
+            <input type="text" class="information" id="lastName" name="lastName" placeholder="Enter Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Last Name'">
+
+            <label for="email">
+                Email
+            </label>
+            <input type="email" class="information" id="email" name="email" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'EnterEmail'">
+
+            <label for="phoneNumber">
+                Telephone
+            </label>
+            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required id="phoneNumber" class="information" name="phoneNumber" placeholder="Enter Phone Number (e.g. 123-456-7890)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Phone Number (e.g. 123-456-7890)'">
+
+            <label for="password">
+                Password
+            </label>
+            <input type="password" id="password" class="information" name="password" placeholder="Enter Password (min of 8 characters)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Password'" required>
+
+            <label for="accountType">
+                Account Type
+            </label>
+            <select id="accountType" class="information">
+                <option value="" disabled selected hidden>Select Account Type</option>
+                <option>Owner</option>
+                <option>Coworker</option>
+            </select>
+
+            <button type="button" id="submit" onclick="addUserInfo()">Create Account</button>
+        </form>
+        <footer id="footer">
+            <p> Matthew Green's Coworker Web App</p>
+            <p id="copyright"></p>
+            <p id="current_date"></p>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
