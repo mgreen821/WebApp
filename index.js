@@ -517,8 +517,8 @@ function display() {
         for (i = 0; i < propertyData.length; i++) {
             let row = document.getElementById("tableBody").insertRow(i);
             for (j = 0; j < 11; j++) {
-                let cell = row.insertCell(j);
                 if (propertyData[i].email == activeUser.email) {
+                    let cell = row.insertCell(j);
                     let update = "<button type=" + "button" + " class=" + "mybtn" + " onclick=" + "editProp(" + "\"" + `${propertyData[i].id}` + "\"" + ")" + "  id=" + `${propertyData[i].id}` + ">Edit</button>"
                     let remove = "<button type=" + "button" + " class=" + "mybtn" + " onclick=" + "removeProp(" + "\"" + `${propertyData[i].id}` + "\"" + ")" + "  id=" + `${propertyData[i].id}` + ">Remove</button>"
                     switch (j) {
@@ -567,8 +567,8 @@ function display() {
         for (i = 0; i < workspaceData.length; i++) {
             let row = document.getElementById("tableBodyWorkpaces").insertRow(i);
             for (j = 0; j < 9; j++) {
-                let cell = row.insertCell(j);
                 if (workspaceData[i].email == activeUser.email) {
+                    let cell = row.insertCell(j);
                     let update = "<button type=" + "button" + " class=" + "mybtn" + " onclick=" + "editProp(" + "\"" + `${workspaceData[i].id}` + "\"" + ")" + "  id=" + `${workspaceData[i].id}` + ">Edit</button>"
                     let remove = "<button type=" + "button" + " class=" + "mybtn" + " onclick=" + "removeProp(" + "\"" + `${workspaceData[i].id}` + "\"" + ")" + "  id=" + `${workspaceData[i].id}` + ">Remove</button>"
                     switch (j) {
