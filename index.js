@@ -658,7 +658,7 @@ function searchWork() {
 
     for (i = 0; i < workTr.length; i++) {
         flag = 0;
-        for (j = 0; j < 7; j++) {
+        for (j = 0; j < 8; j++) {
             let workTd = workTr[i].getElementsByTagName("td")[j];
             if (workTd) {
                 tableValue = workTd.textContent.toUpperCase() || workTd.innerText.toUpperCase();
