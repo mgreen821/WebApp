@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Workspace Info</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="footer()">
+    <div class="main-container">
+        <header>
+            <h1 id="logo">Coworker Web App</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Sign Up</a></li>
+                    <li><a href="property.html">Add Property</a></li>
+                    <li><a href="workspace.html">Add Workspaces</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="search.html">Search</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="popup" class="popupMask">
+
+            <div class="popupContent">
+
+                <form id="workspaceUpdate">
+                    <h2>Workspace Information Form</h2>
+                    <label for="propertySelect">
+                        Property Address
+                    </label>
+                    <input type="text" id="propertySelect" class="information" placeholder=" Enter your property address to add workspace to">
+
+                    <label for="workspaceType">
+                        Workspace Type
+                    </label>
+                    <input type="text" id="workspaceType" class="information" placeholder=" Enter workspace type (e.g. room, desk, etc.)">
+
+                    <label for="capcity">
+                        Capcity
+                    </label>
+                    <input type="number" id="capcity" class="information" placeholder=" Enter capcity">
+
+                    <label for="price">
+                        Price
+                    </label>
+                    <input type="number" id="price" class="information" placeholder=" Enter price">
+
+                    <label for="date">
+                        Date Avaliable
+                    </label>
+                    <input type="date" id="date" class="information" min="2020-01-01">
+
+                    <label for="term">
+                        Lease Term
+                    </label>
+                    <select id="term" class="information">
+                        <option value="" disabled selected hidden>Select</option>
+                        <option>Day</option>
+                        <option>Week</option>
+                        <option>Month</option>
+                    </select>
+
+                    <label for="smoke">
+                        Smoking
+                    </label>
+                    <select id="smoke" class="information">
+                        <option value="" disabled selected hidden>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+
+                    <button type="button" id="updateWorkspaceInfo" onclick="updateWorkspaceInfomation(this.name)">Submit</button>
+                </form>
+
+                <form id="propertyUpdate">
+                    <h2>Update Property Information</h2>
+                    <label for="propertyAddress">
+                        Street Address
+                    </label>
+                    <input type="text" id="propertyAddress" class="information" placeholder="Enter property address">
+
+                    <label for="postalCode">
+                        Postal Code
+                    </label>
+                    <input type="text" id="postalCode" class="information" placeholder="Enter property postal code">
+
+                    <label for="city">
+                        City
+                    </label>
+                    <input type="text" id="city" class="information" placeholder="Enter property city">
+
+                    <label for="province">
+                        Province/Territory
+                    </label>
+                    <select id="province" class="information">
+                        <option value="" disabled selected hidden>Select</option>
+                        <option>Alberta</option>
+                        <option>British Columbia</option>
+                        <option>Manitoba</option>
+                        <option>New Brunswick</option>
+                        <option>Newfoundland</option>
+                        <option>Northwest Territories</option>
+                        <option>Nova Scotia</option>
+                        <option>Nunavut</option>
+                        <option>Ontario</option>
+                        <option>Prince Edward Island</option>
+                        <option>Quebec</option>
+                        <option>Saskatchewan</option>
+                        <option>Yukon</option>
+                    </select>
+
+                    <label for="country">
+                        Counrty
+                    </label>
+                    <select id="country" class="information">
+                        <option value="" disabled selected hidden>Select</option>
+                        <option>Canada</option>
+                    </select>
+
+                    <label for="neighborhood">
+                        Neighborhood
+                    </label>
+                    <input type="text" id="neighborhood" class="information" placeholder=" Enter property neighborhood">
+
+                    <label for="size">
+                        Size
+                    </label>
+                    <input type="number" id="size" class="information" placeholder=" Enter square footage">
+
+                    <label for="garage">
+                        Parking garage
+                    </label>
+                    <select id="garage" class="information">
+                        <option value="" disabled selected hidden>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+
+                    <label for="transport">
+                        Reachable by public transportation
+                    </label>
+                    <select id="transport" class="information">
+                        <option value="" disabled selected hidden>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+
+                    <button type="button" id="updatePropertyInfo" onclick="updatePropertyInfomation(this.name)">Submit</button>
+                </form>
+
+                <form id="workspaceVeiw">
+                    <h2>Workspace Information Form</h2>
+                    <label for="propertyView">
+                        Property Address
+                    </label>
+                    <input type="text" id="propertyView" class="information" readonly>
+
+                    <label for="workspaceTypeView">
+                        Workspace Type
+                    </label>
+                    <input type="text" id="workspaceTypeView" class="information" readonly>
+
+                    <label for="capcityView">
+                        Capcity
+                    </label>
+                    <input type="number" id="capcityView" class="information" readonly>
+
+                    <label for="priceView">
+                        Price
+                    </label>
+                    <input type="number" id="priceView" class="information" readonly>
+
+                    <label for="dateView">
+                        Date Avaliable
+                    </label>
+                    <input type="date" id="dateView" class="information" readonly>
+
+                    <label for="termView">
+                        Lease Term
+                    </label>
+                    <input id="termView" class="information" readonly>
+
+                    <label for="smokeView">
+                        Smoking
+                    </label>
+                    <input id="smokeView" class="information" readonly>
+
+                    <button type="button" id="close" onclick="exit()">Close</button>
+                </form>
+
+                <form id="contact">
+                    <h2>Contact</h2>
+                    <label for="firstnameContact">Name</label>
+                    <input type="text" class="information" id="firstnameContact" readonly>
+
+                    <label for="phoneContact">Phone</label>
+                    <input type="text" class="information" id="phoneContact" readonly>
+
+                    <label for="emailContact">E-mail</label>
+                    <input type="email" class="information" id="emailContact" readonly>
+
+                    <button type="button" id="closeContact" onclick="exit()">Close</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div id="container">
+            <h2>Search Properties</h2>
+            <div class="searchDiv">
+                <input type="text" class="search" id="searchProp" placeholder="Search by address, postal code, city, neighborhood, etc....">
+                <button type="button" onclick="searchProp()">Search</button>
+            </div>
+
+            <h2>Properties</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Onwers Email</th>
+                        <th>Street Address</th>
+                        <th>Postal Code</th>
+                        <th>City</th>
+                        <th>Province</th>
+                        <th>Country</th>
+                        <th>Neighborhood</th>
+                        <th>Square Footage</th>
+                        <th>Parking Garage</th>
+                        <th>Public Transport</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" class="table_body">
+                </tbody>
+            </table>
+
+            <h2>Search Workspaces</h2>
+            <div class="searchDiv">
+                <input type="text" class="search" id="searchWork" placeholder="Search by address, type, capcity, price, etc....">
+                <button type="button" onclick="searchWork()">Search</button>
+            </div>
+
+            <h2>Workspaces</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Onwers Email</th>
+                        <th>Property Address</th>
+                        <th>Type</th>
+                        <th>Capacity</th>
+                        <th>Price</th>
+                        <th>Date Avaliable</th>
+                        <th>Lease Term</th>
+                        <th>Smoking</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBodyWorkpaces" class="table_body">
+                </tbody>
+            </table>
+        </div>
+        <footer id="footer">
+            <p> Matthew Green's Coworker Web App</p>
+            <p id="copyright"></p>
+            <p id="current_date"></p>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
